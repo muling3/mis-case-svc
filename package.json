@@ -24,7 +24,8 @@
     "@mis/access-control": "*",
     "@mis/validation-schemas": "*",
     "@mis/circuit-breaker": "*",
-    "@mis/proto": "*"
+    "@mis/proto": "*",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.4.5",

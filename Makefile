@@ -59,11 +59,13 @@ typecheck:             ## tsc --noEmit
 prisma-generate:       ## STUB — no Prisma schema yet
 	@echo "prisma-generate: TODO for $(SERVICE)"
 
-prisma-migrate:        ## STUB
-	@echo "prisma-migrate: TODO for $(SERVICE)"
+prisma-migrate:        ## Ensure schema exists, then `prisma migrate dev` (local)
+	@node scripts/ensure-schema.js
+	npx prisma migrate dev
 
-prisma-deploy:         ## STUB
-	@echo "prisma-deploy: TODO for $(SERVICE)"
+prisma-deploy:         ## Ensure schema exists, then `prisma migrate deploy` (CI/prod)
+	@node scripts/ensure-schema.js
+	npx prisma migrate deploy
 
 seed:                  ## STUB
 	@echo "seed: TODO for $(SERVICE)"
